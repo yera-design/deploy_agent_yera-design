@@ -6,7 +6,7 @@ echo "Terminated! Archiving current state..."
 	if [ -n "$input" ]; then
 		cd ..	
 		archive_name="attendance_tracker_${input}_archive"
-		tar -czf "$archive_name" "attendance_tracker_$input_archive" 2>/dev/null
+		tar -czf "$archive_name" "attendance_tracker_$input" 2>/dev/null
 		echo "Archive has been created: $archive_name"
 		rm -rf "attendance_tracker_$input"
 		echo "Incomplete directory removed"
