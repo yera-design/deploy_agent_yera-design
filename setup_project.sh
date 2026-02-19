@@ -26,8 +26,24 @@ echo " Enter a name for your attendance tracker:"
 read input
 par_dir="attendance_tracker_$input"
 echo "Creating $par_dir directory ..."
-mkdir $par_dir
+
+
+if [[ -d "$par_dir" ]]; then 
+	echo " Directory arleady exists!, Do you want to overwrite it?(y/n)
+	read overwrite
+	if [[ "$overwrite" == "y" || "$overwrite" == "yes" ]]; then
+	       rm -rf "$par_dir"
+       	       mkdir "$par_dir"
+	else
+		exit 1
+	fi
+else 
+	mkdir "$par_dir"
+fi
+
 cd "$par_dir" || exit 1
+
+
 mkdir Helpers
 mkdir reports
 touch attendance_checker.py
@@ -117,6 +133,9 @@ then
 	then 
 		warning_value=75
 		echo "Applying default warning: 75"
+        elif [[ ! "$warning_value" =~ ^[0-9]+$ ]]; then
+     		echo "Invalid input! Using default warning : 75"
+		warning_value=75
 	fi
 	
 	echo "Enter failure threshold(default=50):"
@@ -125,7 +144,13 @@ then
 	then
 		failure_value=50
 		echo "Applying default failure: 50"
+
+	elif [[ ! "$failure_value" =~ ^[0-9]+$ ]]; then
+		echo "Invalid input!, Using default failure :50"
+		failure_value=50
 	fi
+
+
         echo "Thresholds are updating..."
 
 	warning_pattern='s/"warning": [0-9]\+/"warning": '$warning_value'/g'
