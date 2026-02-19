@@ -19,6 +19,14 @@ echo "Terminated! Archiving current state..."
 	exit
 ' SIGINT
 
+
+if [[ ! -w "$(pwd)" ]]; then
+    echo "ERROR: No write permission in current directory!"
+    exit 1
+fi
+echo "✅ Permission check passed"
+echo
+
 echo "Starting attendance tracker setup ....."
 
 #Creating the parent directory due to the input of the user"
