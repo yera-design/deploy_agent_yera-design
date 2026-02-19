@@ -29,7 +29,7 @@ echo "Creating $par_dir directory ..."
 
 
 if [[ -d "$par_dir" ]]; then 
-	echo " Directory arleady exists!, Do you want to overwrite it?(y/n)
+	echo " Directory arleady exists!, Do you want to overwrite it?(y/n)"
 	read overwrite
 	if [[ "$overwrite" == "y" || "$overwrite" == "yes" ]]; then
 	       rm -rf "$par_dir"
