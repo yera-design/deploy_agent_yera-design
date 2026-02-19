@@ -61,4 +61,4 @@ The script automatically checks if Python 3 is installed and shows:
 Python 3 is not installed   (if missing)
 
 
-https://www.youtube.com/watch?v=heGXlUDQlYY(Link to the video)
+https://www.youtube.com/watch?v=heGXlUDQlYY (Link to the video)
