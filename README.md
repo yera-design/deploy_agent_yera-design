@@ -14,17 +14,17 @@ Run it:
 
 2.Follow the prompts:
 
-    Enter a name for your project
+  a)Enter a name for your project
 
-    Choose whether to update warning/failure thresholds
-                  (If yes, enter new percentage values)
-      And if no input, the thresholds are going to be automatically set to the default values
+  b)Choose whether to update warning/failure thresholds
+   (If yes, enter new percentage values)
+   And if no input, the thresholds are going to be automatically set to the default values
 
 That's it! The script creates everything you need.
 
 What Gets Created
 
-After running, you'll have a folder called attendance_tracker_yourname containing:
+After running, you'll have a folder called attendance_tracker_(input) containing:
 
 attendance_checker.py – The main Python program
 
@@ -32,27 +32,27 @@ Helpers/ folder with assets.csv and config.json
 
 reports/ folder with an empty reports.log
 
-Archive Feature (Ctrl+C)
+3.Archive Feature (Ctrl+C)
 
 If you press Ctrl+C while the script is running, it will:
 
-Create a backup archive of everything created so far
-Delete the incomplete project folder
-Exit cleanly
+a)Create a backup archive of everything created so far
+b)Delete the incomplete project folder
+c)Exit cleanly
 
 How to test it:
 
-Run 
+I.Run 
  ./setup_project.sh
 
-Enter a name
+II.Enter a name
 While files are being created, press Ctrl+C
 You'll see an archive file named attendance_tracker_yourname_archive
 
 The archive saves your work so nothing is lost if you need to cancel.
 
 
-Final Check
+4.Final Check
 
 The script automatically checks if Python 3 is installed and shows:
 
